@@ -14,6 +14,12 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.clearfix {
+    content: '';
+    display: table;
+    clear: both;
+}
+
 /* MAIN CONTAINER */
 .main-container {
     display: flex;
@@ -186,9 +192,38 @@ header .settings i {
 
 /* SEZIONE DESTRA */
 .chat {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    padding: 3rem 5rem;
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
     overflow-y: scroll;
+}
+
+.chat-message {
+    position: relative;
+    max-width: 45%;
+    padding: 1rem 5rem 1rem 1rem;
+    border-radius: .5rem;
+}
+
+.chat-message.sent-message {
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+.chat-message.received-message {
+    align-self: flex-start;
+    background-color: white;
+}
+
+.chat-message .time-msg {
+    position: absolute;
+    bottom: .3rem;
+    right: .3rem;
+    font-size: .6rem;
+    color: #b1b1b1;
 }
 
 /* FOOTER */
