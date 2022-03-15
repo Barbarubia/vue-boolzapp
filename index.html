@@ -58,7 +58,7 @@
             </div>
             <!-- Contacts -->
             <ul class="contacts">
-                <li v-for="(contact, index) in arrContacts" class="contact" :class="index == activeIndex ? 'active' : ''">
+                <li v-for="(contact, index) in arrContacts" @click="activeIndex= index" class="contact" :class="index == activeIndex ? 'active' : ''">
                     <div class="contact-img">
                         <img :src="'img/avatar_' + contact.avatar" :alt="'Immagine ' + contact.nome">
                     </div>
@@ -180,9 +180,9 @@
             <header class="header right-header">
                 <!-- Icona e nome dell'utente della chat selezionata -->
                 <div class="user">
-                    <img src="img/avatar_1.jpg" alt="Avatar Utente">
+                    <img :src="'img/avatar_' + arrContacts[activeIndex].avatar" :alt="'Avatar ' + arrContacts[activeIndex].nome">
                     <div class="user-info">
-                        <span>Michele</span>
+                        <span>{{ arrContacts[activeIndex].nome }}</span>
                         <span class="last-online">Ultimo accesso oggi alle 12:00</span>
                     </div>
                 </div>
