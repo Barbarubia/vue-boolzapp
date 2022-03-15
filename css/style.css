@@ -161,6 +161,7 @@ header .settings i {
 .contact {
     display: flex;
     padding: .5rem .5rem .5rem 1rem;
+    cursor: pointer;
 }
 
 .contact.active {
@@ -240,6 +241,12 @@ footer .send-audio {
     font-size: 1.6rem;
     color: #6b7376;
 }
+
+footer .emoji i,
+footer .send-audio i {
+    cursor: pointer;
+}
+
 
 footer #message {
     height: 3rem;
