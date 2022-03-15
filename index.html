@@ -7,6 +7,10 @@
     <title>BoolzApp</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <!-- Link CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Link Font Awesome -->
@@ -18,10 +22,43 @@
     <div id="root" class="main-container">
 
         <!-- Sezione sinistra con elenco di tutte le chat -->
-        <div class="left-container"></div>
+        <div class="left-container">
+            <!-- Intestazione sezione sinistra -->
+            <header class="header left-header">
+                <!-- Icona e nome dell'utente -->
+                <div class="user">
+                    <img src="img/avatar_io.jpg" alt="Avatar Utente">
+                    <span>Sofia</span>
+                </div>
+                <!-- Icone impostazioni -->
+                <div class="settings">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </header>
+        </div>
 
         <!-- Sezione destra con contenuto della chat selezionata -->
-        <div class="right-container"></div>
+        <div class="right-container">
+            <!-- Intestazione sezione destra -->
+            <header class="header right-header">
+                <!-- Icona e nome dell'utente della chat selezionata -->
+                <div class="user">
+                    <img src="img/avatar_1.jpg" alt="Avatar Utente">
+                    <div class="user-info">
+                        <span>Michele</span>
+                        <span class="last-online">Ultimo accesso oggi alle 12:00</span>
+                    </div>
+                </div>
+                <!-- Icone impostazioni -->
+                <div class="settings">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </header>
+        </div>
 
     </div>
     
