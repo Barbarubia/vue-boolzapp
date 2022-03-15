@@ -5,6 +5,7 @@ const app = new Vue({
                 nome: 'Sofia',
                 avatar: 'io.jpg'
             },
+        activeIndex: 0,
         arrContacts: [
             {
                 nome: 'Michele',
@@ -40,5 +41,4 @@ const app = new Vue({
             }
         ]
     }
-
 })

@@ -27,7 +27,7 @@
             <header class="header left-header">
                 <!-- Icona e nome dell'utente -->
                 <div class="user">
-                    <img :src="'img/avatar_' + user.avatar" alt="'Avatar ' + user.nome">
+                    <img :src="'img/avatar_' + user.avatar" :alt="'Avatar ' + user.nome">
                     <span>{{ user.nome }}</span>
                 </div>
                 <!-- Icone impostazioni -->
@@ -58,9 +58,9 @@
             </div>
             <!-- Contacts -->
             <ul class="contacts">
-                <li v-for="contact in arrContacts" class="contact">
+                <li v-for="(contact, index) in arrContacts" class="contact" :class="index == activeIndex ? 'active' : ''">
                     <div class="contact-img">
-                        <img :src="'img/avatar_' + contact.avatar" alt="'Immagine ' + contact.nome">
+                        <img :src="'img/avatar_' + contact.avatar" :alt="'Immagine ' + contact.nome">
                     </div>
                     <div class="contact-name-and-last-message">
                         <span>{{ contact.nome }}</span>
@@ -70,8 +70,10 @@
                         <span>12:00</span>
                     </div>
                 </li>
-                <!-- 
-                    Elenc
+            </ul>
+            <!-- 
+            Elenco contatti scritto manualmente senza integrazione con vue.js
+            <ul>
                 <li class="contact active">
                     <div class="contact-img">
                         <img src="img/avatar_1.jpg" alt="Immagine Michele">
@@ -167,8 +169,9 @@
                     <div class="contact-last-online">
                         <span>12:00</span>
                     </div>
-                </li> -->
+                </li>
             </ul>
+            -->
         </div>
 
         <!-- Sezione destra con contenuto della chat selezionata -->
