@@ -31,6 +31,8 @@ body {
 }
 
 .right-container {
+    display: flex;
+    flex-direction: column;
     width: 65%;
     height: 100%;
     background-color: red;
@@ -128,6 +130,7 @@ header .settings i {
     height: 2rem;
     background-color: white;
     border: 1px solid #f5f5f5;
+    border-radius: .3rem;
 }
 
 .searchbar label {
@@ -175,4 +178,35 @@ header .settings i {
 .contact-last-online {
     font-size: .9rem;
     color: #b1b1b1;
+}
+
+/* SEZIONE DESTRA */
+.chat {
+    background-image: url(../img/mine.jpg);
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    background-color: #f3eeea;
+    align-items: center;
+    padding: .7rem;
+}
+
+footer .emoji,
+footer .send-audio {
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    color: #6b7376;
+}
+
+footer #message {
+    height: 3rem;
+    flex-grow: 1;
+    margin-right: .5rem;
+    padding-left: 1rem;
+    border: none;
+    border-radius: .5rem;
 }
