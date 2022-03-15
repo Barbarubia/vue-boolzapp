@@ -22,6 +22,8 @@ body {
 }
 
 .left-container {
+    display: flex;
+    flex-direction: column;
     width: 35%;
     height: 100%;
     background-color: white;
@@ -39,8 +41,8 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: #eaeaea;
-    height: 4.2rem;
-    padding: .5rem;
+    /* height: 4.2rem; */
+    padding: .6rem;
 }
 
 .header .user {
@@ -83,7 +85,7 @@ header .settings i {
 .left-notifications {
     display: flex;
     align-items: center;
-    padding: .5rem 1rem;
+    padding: 1rem;
     background-color: #8edafc;
 }
 
@@ -138,4 +140,39 @@ header .settings i {
     height: 100%;
     padding-left: .5rem;
     border: none;
+}
+
+/* CONTACTS */
+.contacts {
+    flex-grow: 1;
+    overflow-y: scroll;
+    list-style: none;
+}
+
+.contact {
+    display: flex;
+    padding: .5rem .5rem .5rem 1rem;
+}
+
+.contact:not(:last-child) {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.contact .contact-img img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.contact-name-and-last-message {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 1rem;
+}
+
+.contact .last-sent-msg,
+.contact-last-online {
+    font-size: .9rem;
+    color: #b1b1b1;
 }
