@@ -27,8 +27,8 @@
             <header class="header left-header">
                 <!-- Icona e nome dell'utente -->
                 <div class="user">
-                    <img src="img/avatar_io.jpg" alt="Avatar Utente">
-                    <span>Sofia</span>
+                    <img :src="'img/avatar_' + user.avatar" alt="'Avatar ' + user.nome">
+                    <span>{{ user.nome }}</span>
                 </div>
                 <!-- Icone impostazioni -->
                 <div class="settings">
@@ -57,8 +57,21 @@
                 </div>
             </div>
             <!-- Contacts -->
-            <!-- TODO: Generare lista contatti con Vue impostando un array -->
             <ul class="contacts">
+                <li v-for="contact in arrContacts" class="contact">
+                    <div class="contact-img">
+                        <img :src="'img/avatar_' + contact.avatar" alt="'Immagine ' + contact.nome">
+                    </div>
+                    <div class="contact-name-and-last-message">
+                        <span>{{ contact.nome }}</span>
+                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
+                    </div>
+                    <div class="contact-last-online">
+                        <span>12:00</span>
+                    </div>
+                </li>
+                <!-- 
+                    Elenc
                 <li class="contact active">
                     <div class="contact-img">
                         <img src="img/avatar_1.jpg" alt="Immagine Michele">
@@ -154,7 +167,7 @@
                     <div class="contact-last-online">
                         <span>12:00</span>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
 
