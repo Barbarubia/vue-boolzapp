@@ -53,12 +53,12 @@
                     <label for="search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </label>
-                    <input type="text" name="seach" id="search" placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup="filterContacts()" v-model="searchContact" type="text" name="seach" id="search" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
             <!-- Contacts -->
             <ul class="contacts">
-                <li v-for="(contact, index) in arrContacts" @click="activeIndex= index" class="contact" :class="index == activeIndex ? 'active' : ''">
+                <li v-if="contact.listed" v-for="(contact, index) in arrContacts" @click="activeIndex= index" class="contact" :class="index == activeIndex ? 'active' : ''">
                     <div class="contact-img">
                         <img :src="'img/avatar_' + contact.avatar" :alt="'Immagine ' + contact.nome">
                     </div>

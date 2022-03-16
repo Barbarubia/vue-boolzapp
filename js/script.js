@@ -6,6 +6,7 @@ const app = new Vue({
             hour: '12:00',
             type: 'sent'
         },
+        searchContact: '',
         user: {
                 nome: 'Sofia',
                 avatar: 'io.jpg'
@@ -15,6 +16,7 @@ const app = new Vue({
             {
                 nome: 'Michele',
                 avatar: '1.jpg',
+                listed: true,
                 lastOnline: '2022-03-16T12:03:00',
                 messages: [
                     {
@@ -37,6 +39,7 @@ const app = new Vue({
             {
                 nome: 'Fabio',
                 avatar: '2.jpg',
+                listed: true,
                 lastOnline: '2022-03-16T11:47:00',
                 messages: [
                     {
@@ -59,6 +62,7 @@ const app = new Vue({
             {
                 nome: 'Samuele',
                 avatar: '3.jpg',
+                listed: true,
                 lastOnline: '2022-03-15T20:07:00',
                 messages: [
                     {
@@ -86,6 +90,7 @@ const app = new Vue({
             {
                 nome: 'Alessandro B.',
                 avatar: '4.jpg',
+                listed: true,
                 lastOnline: '2022-03-16T11:42:00',
                 messages: [
                     {
@@ -103,6 +108,7 @@ const app = new Vue({
             {
                 nome: 'Alessandro L.',
                 avatar: '5.jpg',
+                listed: true,
                 lastOnline: '2022-03-16T10:51:00',
                 messages: [
                     {
@@ -125,6 +131,7 @@ const app = new Vue({
             {
                 nome: 'Claudia',
                 avatar: '6.jpg',
+                listed: true,
                 lastOnline: '2022-03-16T11:59:00',
                 messages: [
                     {
@@ -142,6 +149,7 @@ const app = new Vue({
             {
                 nome: 'Federico',
                 avatar: '7.jpg',
+                listed: true,
                 lastOnline: '2022-03-15T23:13:00',
                 messages: [
                     {
@@ -154,6 +162,7 @@ const app = new Vue({
             {
                 nome: 'Davide',
                 avatar: '8.jpg',
+                listed: true,
                 lastOnline: '2022-03-13T21:09:00',
                 messages: [
                     {
@@ -208,6 +217,14 @@ const app = new Vue({
             } else {
                 return `Ultimo accesso il ${ddMMyyyy} alle ${dt.toFormat('HH:mm')}`;
             }
+        },
+        // Funzione per filtrare i contatti nella lista dei contatti
+        filterContacts() {
+            this.arrContacts.forEach(contact => {
+                if (!contact.nome.includes(this.searchContact)) {
+                    contact.listed = false;
+                }
+            })
         }
     }
 })
