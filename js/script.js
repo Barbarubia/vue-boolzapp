@@ -199,9 +199,12 @@ const app = new Vue({
 
             let ddMMyyyy = dt.toFormat('dd/MM/yyyy');
 
+
             if (ddMMyyyy == luxon.DateTime.now().toFormat('dd/MM/yyyy')) {
                 return `Ultimo accesso oggi alle ${dt.toFormat('HH:mm')}`;
-            // TODO: confrontare le date per far apparire "ieri"
+            } else if (ddMMyyyy == (luxon.DateTime.now().minus({days: 1}).toFormat('dd/MM/yyyy'))) {
+                // FIXME: verificare se toglie un giorno indipendentemente dall'ora o se toglie 24 ore esatte
+                return `Ultimo accesso ieri alle ${dt.toFormat('HH:mm')}`;
             } else {
                 return `Ultimo accesso il ${ddMMyyyy} alle ${dt.toFormat('HH:mm')}`;
             }
