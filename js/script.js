@@ -8,13 +8,13 @@ const app = new Vue({
         },
         searchContact: '',
         user: {
-                nome: 'Sofia',
+                name: 'Sofia',
                 avatar: 'io.jpg'
             },
         activeIndex: 0,
         arrContacts: [
             {
-                nome: 'Michele',
+                name: 'Michele',
                 avatar: '1.jpg',
                 listed: true,
                 lastOnline: '2022-03-16T12:03:00',
@@ -37,7 +37,7 @@ const app = new Vue({
                 ]
             },
             {
-                nome: 'Fabio',
+                name: 'Fabio',
                 avatar: '2.jpg',
                 listed: true,
                 lastOnline: '2022-03-16T11:47:00',
@@ -60,7 +60,7 @@ const app = new Vue({
                 ]
             },
             {
-                nome: 'Samuele',
+                name: 'Samuele',
                 avatar: '3.jpg',
                 listed: true,
                 lastOnline: '2022-03-15T20:07:00',
@@ -88,7 +88,7 @@ const app = new Vue({
                 ]
             },
             {
-                nome: 'Alessandro B.',
+                name: 'Alessandro B.',
                 avatar: '4.jpg',
                 listed: true,
                 lastOnline: '2022-03-16T11:42:00',
@@ -106,7 +106,7 @@ const app = new Vue({
                 ]
             },
             {
-                nome: 'Alessandro L.',
+                name: 'Alessandro L.',
                 avatar: '5.jpg',
                 listed: true,
                 lastOnline: '2022-03-16T10:51:00',
@@ -129,7 +129,7 @@ const app = new Vue({
                 ]
             },
             {
-                nome: 'Claudia',
+                name: 'Claudia',
                 avatar: '6.jpg',
                 listed: true,
                 lastOnline: '2022-03-16T11:59:00',
@@ -147,7 +147,7 @@ const app = new Vue({
                 ]
             },
             {
-                nome: 'Federico',
+                name: 'Federico',
                 avatar: '7.jpg',
                 listed: true,
                 lastOnline: '2022-03-15T23:13:00',
@@ -160,7 +160,7 @@ const app = new Vue({
                 ]
             },
             {
-                nome: 'Davide',
+                name: 'Davide',
                 avatar: '8.jpg',
                 listed: true,
                 lastOnline: '2022-03-13T21:09:00',
@@ -221,7 +221,7 @@ const app = new Vue({
         // Funzione per filtrare i contatti nella lista dei contatti
         filterContacts() {
             this.arrContacts.forEach(contact => {
-                if (contact.nome.toLowerCase().includes(this.searchContact.toLowerCase())) {
+                if (contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
                     contact.listed = true;
                 } else {
                     contact.listed = false;
