@@ -221,7 +221,9 @@ const app = new Vue({
         // Funzione per filtrare i contatti nella lista dei contatti
         filterContacts() {
             this.arrContacts.forEach(contact => {
-                if (!contact.nome.includes(this.searchContact)) {
+                if (contact.nome.toLowerCase().includes(this.searchContact.toLowerCase())) {
+                    contact.listed = true;
+                } else {
                     contact.listed = false;
                 }
             })
