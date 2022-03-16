@@ -160,13 +160,30 @@ const app = new Vue({
     methods: {
         // Funzione per mandare un nuovo messaggio all'interno della chat
         sendMsg() {
+
+            let activeContactChat = this.arrContacts[this.activeIndex].messages;
+
             if (this.newMsg.text.trim() != '') {
-                this.arrContacts[this.activeIndex].messages.push(this.newMsg);
+                activeContactChat.push(this.newMsg);
                 this.newMsg = {
                     text: ``,
                     hour: '12:00',
                     type: 'sent'
                 };
+                // Generatore di risposta random
+                const arrReplies = ['Ok!', 'Forse', 'Non lo so', 'Ci penserò', 'No', 'Va bene', 'Perfetto'];
+                function randomReply() {
+                    let randomIndex = Math.floor(Math.random() * (arrReplies.length));
+                    // console.log(arrReplies[randomIndex]);
+                    return arrReplies[randomIndex];
+                }
+                // Risposta random visualizzata dopo un secondo
+                let contactReply = {
+                    text: randomReply(),
+                    hour: '12:00',
+                    type: 'received'
+                };
+                setTimeout(function () {activeContactChat.push(contactReply)}, 1000);
             }
         }
     }
