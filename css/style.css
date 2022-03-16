@@ -232,19 +232,30 @@ header .settings i {
     cursor: pointer;
 }
 
-.show {
-    opacity: 1;
-}
-
-.chat-message #menu-msg {
+.chat-message .menu-msg {
+    opacity: 0;
     position: absolute;
     top: 1.2rem;
     right: -.7rem;
     background-color: #eaeaea;
     border-radius: .3rem;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.75);
     list-style: none;
-    padding: .5rem 1rem;
+    padding: 0.3rem 1rem;
     color: #6b7376;
+}
+
+.menu-msg.show {
+    opacity: 1;
+}
+
+.chat-message .menu-msg li {
+    margin: .2rem;
+    cursor: pointer;
+}
+
+.chat-message .menu-msg li:hover {
+    color: black;
 }
 
 /* FOOTER */

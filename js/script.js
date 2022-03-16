@@ -7,6 +7,7 @@ const app = new Vue({
             type: 'sent'
         },
         searchContact: '',
+        showMenuMsg: false,
         user: {
                 name: 'Sofia',
                 avatar: 'io.jpg'
@@ -22,17 +23,20 @@ const app = new Vue({
                     {
                         text: `Ciao! Come stai? Ho saputo che hai trovato lavoro come programmatore web!`,
                         hour: '11:34',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     },
                     {
                         text: `Ciao! Alla grande, grazie! Tu?`,
                         hour: '11:59',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     },
                     {
                         text: `Sì, ho ricevuto diverse offerte ed è stato difficile scegliere, ma mi sto ambientando molto bene!`,
                         hour: '12:00',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     }
                 ]
             },
@@ -45,17 +49,20 @@ const app = new Vue({
                     {
                         text: `Ha detto mamma se stasera puoi passare dal otografo a ritirare le foto`,
                         hour: '09:34',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     },
                     {
                         text: `*fotografo`,
                         hour: '09:34',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     },
                     {
                         text: `Ok, appena mi libero ci vado`,
                         hour: '09:38',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     }
                 ]
             },
@@ -68,22 +75,26 @@ const app = new Vue({
                     {
                         text: `Ciao Samuele, a che ora è la riunione domani?`,
                         hour: '19:47',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     },
                     {
                         text: `Ciao Sofy, domani mattina alle 10:30`,
                         hour: '20:03',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     },
                     {
                         text: `Perfetto, grazie!`,
                         hour: '20:05',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     },
                     {
                         text: `Di nulla. A domani :)`,
                         hour: '20:07',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     }
                 ]
             },
@@ -96,12 +107,14 @@ const app = new Vue({
                     {
                         text: `Federico sta raccogliendo i soldi per il regalo di Francesca. Mettiamo 10€ ciascuno. Sei dei nostri?`,
                         hour: '10:15',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     },
                     {
                         text: `Contami per il regalo, però non so se potrò venire alla cena... :(`,
                         hour: '10:17',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     }
                 ]
             },
@@ -114,17 +127,20 @@ const app = new Vue({
                     {
                         text: `Federico sta raccogliendo i soldi per il regalo di Francesca. Mettiamo 10€ ciascuno. Sei dei nostri?`,
                         hour: '10:09',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     },
                     {
                         text: `Hey Sofy, mi sa che hai sbagliato persona ahahah`,
                         hour: '10:12',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     },
                     {
                         text: `Ops, in effetti il messaggio era per un altro Alessandro...scusami!`,
                         hour: '10:13',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     }
                 ]
             },
@@ -137,12 +153,14 @@ const app = new Vue({
                     {
                         text: `Sabato mattina colazione e shopping insieme?`,
                         hour: '10:54',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     },
                     {
                         text: `Mi sembra un'ottima idea!!!`,
                         hour: '11:23',
-                        type: 'sent'
+                        type: 'sent',
+                        showMenu: false
                     }
                 ]
             },
@@ -155,7 +173,8 @@ const app = new Vue({
                     {
                         text: `Ciao Sofia, sto raccogliendo i soldi per il regalo di Francesca. Pensavo di fare 10€ a testa e vediamo a che budget arriviamo. Puoi avvisare Alessandro per favore, che non ho il suo contatto`,
                         hour: '21:23',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     }
                 ]
             },
@@ -168,7 +187,8 @@ const app = new Vue({
                     {
                         text: `-- messaggio eliminato --`,
                         hour: '22:09',
-                        type: 'received'
+                        type: 'received',
+                        showMenu: false
                     }
                 ]
             }
@@ -228,10 +248,6 @@ const app = new Vue({
                 }
             })
         },
-        // Funzione per eliminare un messaggio dalla chat
-        // deleteMsg(index) {
-        //     this.arrContacts[this.activeIndex].messages.splice(index, 1);
-        // },
         // Funzione per mostrare i primi 20 caratteri dell'ultimo messaggio nella lista dei contatti
         showLastMsgShort(index) {
             if (this.arrContacts[index].messages.length > 0) {
@@ -249,6 +265,14 @@ const app = new Vue({
             if (this.arrContacts[index].messages.length > 0) {
                 return this.arrContacts[index].messages[this.arrContacts[index].messages.length - 1].hour;
             }
+        },
+        // Funzione per mostrare il menu a tendina dei singoli messaggi
+        toggleInvertOpacity(index) {
+            return this.arrContacts[this.activeIndex].messages[index].showMenu = !this.arrContacts[this.activeIndex].messages[index].showMenu;
+        },
+        // Funzione per eliminare un messaggio dalla chat
+        deleteMsg(index) {
+            this.arrContacts[this.activeIndex].messages.splice(index, 1);
         }
     }
 })
