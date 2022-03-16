@@ -1,6 +1,11 @@
 const app = new Vue({
     el: '#root',
     data: {
+        newMsg: {
+            text: ``,
+            hour: '12:00',
+            type: 'sent'
+        },
         user: {
                 nome: 'Sofia',
                 avatar: 'io.jpg'
@@ -151,5 +156,18 @@ const app = new Vue({
                 ]
             }
         ]
+    },
+    methods: {
+        // Funzione per mandare un nuovo messaggio all'interno della chat
+        sendMsg() {
+            if (this.newMsg.text.trim() != '') {
+                this.arrContacts[this.activeIndex].messages.push(this.newMsg);
+                this.newMsg = {
+                    text: ``,
+                    hour: '12:00',
+                    type: 'sent'
+                };
+            }
+        }
     }
 })

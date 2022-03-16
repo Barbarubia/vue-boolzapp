@@ -242,7 +242,7 @@ footer .send-audio i {
 }
 
 
-footer #message {
+footer #newMsg {
     height: 3rem;
     flex-grow: 1;
     margin-right: .5rem;
