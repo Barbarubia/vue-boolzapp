@@ -82,7 +82,7 @@
                     <img :src="'img/avatar_' + arrContacts[activeIndex].avatar" :alt="'Avatar ' + arrContacts[activeIndex].nome">
                     <div class="user-info">
                         <span>{{ arrContacts[activeIndex].nome }}</span>
-                        <span class="last-online">Ultimo accesso oggi alle 12:00</span>
+                        <span class="last-online">{{ showLastOnlineDate() }}</span>
                     </div>
                 </div>
                 <!-- Icone impostazioni -->

@@ -15,6 +15,7 @@ const app = new Vue({
             {
                 nome: 'Michele',
                 avatar: '1.jpg',
+                lastOnline: '2022-03-16T12:03:00',
                 messages: [
                     {
                         text: `Ciao! Come stai? Ho saputo che hai trovato lavoro come programmatore web!`,
@@ -36,6 +37,7 @@ const app = new Vue({
             {
                 nome: 'Fabio',
                 avatar: '2.jpg',
+                lastOnline: '2022-03-16T11:47:00',
                 messages: [
                     {
                         text: `Ha detto mamma se stasera puoi passare dal otografo a ritirare le foto`,
@@ -57,6 +59,7 @@ const app = new Vue({
             {
                 nome: 'Samuele',
                 avatar: '3.jpg',
+                lastOnline: '2022-03-15T20:07:00',
                 messages: [
                     {
                         text: `Ciao Samuele, a che ora è la riunione domani?`,
@@ -83,6 +86,7 @@ const app = new Vue({
             {
                 nome: 'Alessandro B.',
                 avatar: '4.jpg',
+                lastOnline: '2022-03-16T11:42:00',
                 messages: [
                     {
                         text: `Federico sta raccogliendo i soldi per il regalo di Francesca. Mettiamo 10€ ciascuno. Sei dei nostri?`,
@@ -99,6 +103,7 @@ const app = new Vue({
             {
                 nome: 'Alessandro L.',
                 avatar: '5.jpg',
+                lastOnline: '2022-03-16T10:51:00',
                 messages: [
                     {
                         text: `Federico sta raccogliendo i soldi per il regalo di Francesca. Mettiamo 10€ ciascuno. Sei dei nostri?`,
@@ -120,6 +125,7 @@ const app = new Vue({
             {
                 nome: 'Claudia',
                 avatar: '6.jpg',
+                lastOnline: '2022-03-16T11:59:00',
                 messages: [
                     {
                         text: `Sabato mattina colazione e shopping insieme?`,
@@ -136,6 +142,7 @@ const app = new Vue({
             {
                 nome: 'Federico',
                 avatar: '7.jpg',
+                lastOnline: '2022-03-15T23:13:00',
                 messages: [
                     {
                         text: `Ciao Sofia, sto raccogliendo i soldi per il regalo di Francesca. Pensavo di fare 10€ a testa e vediamo a che budget arriviamo. Puoi avvisare Alessandro per favore, che non ho il suo contatto`,
@@ -147,6 +154,7 @@ const app = new Vue({
             {
                 nome: 'Davide',
                 avatar: '8.jpg',
+                lastOnline: '2022-03-13T21:09:00',
                 messages: [
                     {
                         text: `-- messaggio eliminato --`,
@@ -183,6 +191,19 @@ const app = new Vue({
                     type: 'received'
                 };
                 setTimeout(function () {activeContactChat.push(contactReply)}, 1000);
+            }
+        },
+        // Funzione per mostrare l'orario dell'ultimo accesso
+        showLastOnlineDate() {
+            let dt = luxon.DateTime.fromISO(this.arrContacts[this.activeIndex].lastOnline);
+
+            let ddMMyyyy = dt.toFormat('dd/MM/yyyy');
+
+            if (ddMMyyyy == luxon.DateTime.now().toFormat('dd/MM/yyyy')) {
+                return `Ultimo accesso oggi alle ${dt.toFormat('HH:mm')}`;
+            // TODO: confrontare le date per far apparire "ieri"
+            } else {
+                return `Ultimo accesso il ${ddMMyyyy} alle ${dt.toFormat('HH:mm')}`;
             }
         }
     }
