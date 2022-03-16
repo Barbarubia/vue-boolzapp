@@ -227,6 +227,28 @@ const app = new Vue({
                     contact.listed = false;
                 }
             })
+        },
+        // Funzione per eliminare un messaggio dalla chat
+        // deleteMsg(index) {
+        //     this.arrContacts[this.activeIndex].messages.splice(index, 1);
+        // },
+        // Funzione per mostrare i primi 20 caratteri dell'ultimo messaggio nella lista dei contatti
+        showLastMsgShort(index) {
+            if (this.arrContacts[index].messages.length > 0) {
+                let lastMsg = this.arrContacts[index].messages[this.arrContacts[index].messages.length - 1].text;
+
+                if (lastMsg.length > 20) {
+                    return lastMsg.substr(0,20) + "...";
+                } else {
+                    return lastMsg.substr(0,20);
+                }
+            }
+        },
+        // Funzione per mostrare l'orario dell'ultimo messaggio nella lista dei contatti
+        showLastMsgTime(index) {
+            if (this.arrContacts[index].messages.length > 0) {
+                return this.arrContacts[index].messages[this.arrContacts[index].messages.length - 1].hour;
+            }
         }
     }
 })
