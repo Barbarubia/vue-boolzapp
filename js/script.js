@@ -158,7 +158,7 @@ const app = new Vue({
         ]
     },
     methods: {
-        // Funzione per mandare un nuovo messaggio all'interno della chat
+        // Funzione per mandare un nuovo messaggio all'interno della chat e ricevere automaticamente una risposta dopo un secondo
         sendMsg() {
 
             let activeContactChat = this.arrContacts[this.activeIndex].messages;
