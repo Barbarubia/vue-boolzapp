@@ -9,7 +9,24 @@ const app = new Vue({
         arrContacts: [
             {
                 nome: 'Michele',
-                avatar: '1.jpg'
+                avatar: '1.jpg',
+                messages: [
+                    {
+                        text: `Ciao! Come stai? Ho saputo che hai trovato lavoro come programmatore web!`,
+                        hour: '11:34',
+                        type: 'sent'
+                    },
+                    {
+                        text: `Ciao! Alla grande, grazie! Tu?`,
+                        hour: '11:59',
+                        type: 'received'
+                    },
+                    {
+                        text: `Sì, ho ricevuto diverse offerte ed è stato difficile scegliere, ma mi sto ambientando molto bene!`,
+                        hour: '12:00',
+                        type: 'received'
+                    }
+                ]
             },
             {
                 nome: 'Fabio',

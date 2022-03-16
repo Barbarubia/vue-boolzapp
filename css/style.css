@@ -14,12 +14,6 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.clearfix {
-    content: '';
-    display: table;
-    clear: both;
-}
-
 /* MAIN CONTAINER */
 .main-container {
     display: flex;

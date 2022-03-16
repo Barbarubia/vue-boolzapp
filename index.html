@@ -71,107 +71,6 @@
                     </div>
                 </li>
             </ul>
-            <!-- 
-            Elenco contatti scritto manualmente senza integrazione con vue.js
-            <ul>
-                <li class="contact active">
-                    <div class="contact-img">
-                        <img src="img/avatar_1.jpg" alt="Immagine Michele">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Michele</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-img">
-                        <img src="img/avatar_2.jpg" alt="Immagine Fabio">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Fabio</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-img">
-                        <img src="img/avatar_3.jpg" alt="Immagine Samuele">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Samuele</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-img">
-                        <img src="img/avatar_4.jpg" alt="Immagine Alessandro B">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Alessandro B.</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-img">
-                        <img src="img/avatar_5.jpg" alt="Immagine Alessandro L">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Alessandro L.</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-img">
-                        <img src="img/avatar_6.jpg" alt="Immagine Claudia">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Claudia</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-img">
-                        <img src="img/avatar_7.jpg" alt="Immagine Federico">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Federico</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-                <li class="contact">
-                    <div class="contact-img">
-                        <img src="img/avatar_8.jpg" alt="Immagine Davide">
-                    </div>
-                    <div class="contact-name-and-last-message">
-                        <span>Davide</span>
-                        <span class="last-sent-msg">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="contact-last-online">
-                        <span>12:00</span>
-                    </div>
-                </li>
-            </ul>
-            -->
         </div>
 
         <!-- Sezione destra con contenuto della chat selezionata -->
@@ -194,7 +93,11 @@
                 </div>
             </header>
             <!-- Chat -->
-            <main class="chat clearfix">
+            <main class="chat">
+                <div v-for="(msg, index) in arrContacts[activeIndex].messages" class="chat-message" :class="msg.type == 'sent' ? 'sent-message' : 'received-message'">
+                    <p>{{ msg.text }}</p>
+                    <span class="time-msg">{{ msg.hour }}</span>
+                </div>
                 <div class="chat-message sent-message">
                     <p>Ciao! Come stai? Ho saputo che hai trovato lavoro come programmatore web!</p>
                     <span class="time-msg">11:34</span>
@@ -226,6 +129,8 @@
 
 
 
+    <!-- Link Luxon: libreria per gestire le date -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
     <!-- Link Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- Link JS -->
