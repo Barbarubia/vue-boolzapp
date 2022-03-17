@@ -19,23 +19,23 @@ const app = new Vue({
                 name: 'Michele',
                 avatar: '1.jpg',
                 listed: true,
-                lastOnline: '2022-03-17T12:03:00',
+                lastOnline: '2022-03-18T12:03:00',
                 messages: [
                     {
                         text: `Ciao! Come stai? Ho saputo che hai trovato lavoro come programmatore web!`,
-                        date: '2022-03-17T11:34:00',
+                        date: '2022-03-18T11:34:00',
                         type: 'sent',
                         showMenu: false
                     },
                     {
                         text: `Ciao! Alla grande, grazie! Tu?`,
-                        date: '2022-03-17T11:59:00',
+                        date: '2022-03-18T11:59:00',
                         type: 'received',
                         showMenu: false
                     },
                     {
                         text: `Sì, ho ricevuto diverse offerte ed è stato difficile scegliere, ma mi sto ambientando molto bene!`,
-                        date: '2022-03-17T12:00:00',
+                        date: '2022-03-18T12:00:00',
                         type: 'received',
                         showMenu: false
                     }
@@ -45,23 +45,23 @@ const app = new Vue({
                 name: 'Fabio',
                 avatar: '2.jpg',
                 listed: true,
-                lastOnline: '2022-03-17T11:47:00',
+                lastOnline: '2022-03-18T11:47:00',
                 messages: [
                     {
                         text: `Ha detto mamma se stasera puoi passare dal otografo a ritirare le foto`,
-                        date: '2022-03-17T09:34:00',
+                        date: '2022-03-18T09:34:00',
                         type: 'received',
                         showMenu: false
                     },
                     {
                         text: `*fotografo`,
-                        date: '2022-03-17T09:34:00',
+                        date: '2022-03-18T09:34:00',
                         type: 'received',
                         showMenu: false
                     },
                     {
                         text: `Ok, appena mi libero ci vado`,
-                        date: '2022-03-17T09:38:00',
+                        date: '2022-03-18T09:38:00',
                         type: 'sent',
                         showMenu: false
                     }
@@ -71,29 +71,29 @@ const app = new Vue({
                 name: 'Samuele',
                 avatar: '3.jpg',
                 listed: true,
-                lastOnline: '2022-03-16T20:07:00',
+                lastOnline: '2022-03-18T20:07:00',
                 messages: [
                     {
                         text: `Ciao Samuele, a che ora è la riunione domani?`,
-                        date: '2022-03-16T19:47:00',
+                        date: '2022-03-18T19:47:00',
                         type: 'sent',
                         showMenu: false
                     },
                     {
                         text: `Ciao Sofy, domani mattina alle 10:30`,
-                        date: '2022-03-16T20:03:00',
+                        date: '2022-03-18T20:03:00',
                         type: 'received',
                         showMenu: false
                     },
                     {
                         text: `Perfetto, grazie!`,
-                        date: '2022-03-16T20:05:00',
+                        date: '2022-03-18T20:05:00',
                         type: 'sent',
                         showMenu: false
                     },
                     {
                         text: `Di nulla. A domani :)`,
-                        date: '2022-03-16T20:07:00',
+                        date: '2022-03-18T20:07:00',
                         type: 'received',
                         showMenu: false
                     }
@@ -103,17 +103,17 @@ const app = new Vue({
                 name: 'Alessandro B.',
                 avatar: '4.jpg',
                 listed: true,
-                lastOnline: '2022-03-17T11:42:00',
+                lastOnline: '2022-03-18T11:42:00',
                 messages: [
                     {
                         text: `Federico sta raccogliendo i soldi per il regalo di Francesca. Mettiamo 10€ ciascuno. Sei dei nostri?`,
-                        date: '2022-03-17T10:15:00',
+                        date: '2022-03-18T10:15:00',
                         type: 'sent',
                         showMenu: false
                     },
                     {
                         text: `Contami per il regalo, però non so se potrò venire alla cena... :(`,
-                        date: '2022-03-17T10:17:00',
+                        date: '2022-03-18T10:17:00',
                         type: 'received',
                         showMenu: false
                     }
@@ -123,23 +123,23 @@ const app = new Vue({
                 name: 'Alessandro L.',
                 avatar: '5.jpg',
                 listed: true,
-                lastOnline: '2022-03-17T10:51:00',
+                lastOnline: '2022-03-18T10:51:00',
                 messages: [
                     {
                         text: `Federico sta raccogliendo i soldi per il regalo di Francesca. Mettiamo 10€ ciascuno. Sei dei nostri?`,
-                        date: '2022-03-17T10:09:00',
+                        date: '2022-03-18T10:09:00',
                         type: 'sent',
                         showMenu: false
                     },
                     {
                         text: `Hey Sofy, mi sa che hai sbagliato persona ahahah`,
-                        date: '2022-03-17T10:12:00',
+                        date: '2022-03-18T10:12:00',
                         type: 'received',
                         showMenu: false
                     },
                     {
                         text: `Ops, in effetti il messaggio era per un altro Alessandro...scusami!`,
-                        date: '2022-03-17T10:13:00',
+                        date: '2022-03-18T10:13:00',
                         type: 'sent',
                         showMenu: false
                     }
@@ -149,17 +149,17 @@ const app = new Vue({
                 name: 'Claudia',
                 avatar: '6.jpg',
                 listed: true,
-                lastOnline: '2022-03-17T11:59:00',
+                lastOnline: '2022-03-18T11:59:00',
                 messages: [
                     {
                         text: `Sabato mattina colazione e shopping insieme?`,
-                        date: '2022-03-17T10:54:00',
+                        date: '2022-03-18T10:54:00',
                         type: 'received',
                         showMenu: false
                     },
                     {
                         text: `Mi sembra un'ottima idea!!!`,
-                        date: '2022-03-17T11:23:00',
+                        date: '2022-03-18T11:23:00',
                         type: 'sent',
                         showMenu: false
                     }
@@ -169,11 +169,11 @@ const app = new Vue({
                 name: 'Federico',
                 avatar: '7.jpg',
                 listed: true,
-                lastOnline: '2022-03-16T23:13:00',
+                lastOnline: '2022-03-17T23:13:00',
                 messages: [
                     {
                         text: `Ciao Sofia, sto raccogliendo i soldi per il regalo di Francesca. Pensavo di fare 10€ a testa e vediamo a che budget arriviamo. Puoi avvisare Alessandro per favore, che non ho il suo contatto`,
-                        date: '2022-03-16T21:23:00',
+                        date: '2022-03-17T21:23:00',
                         type: 'received',
                         showMenu: false
                     }
