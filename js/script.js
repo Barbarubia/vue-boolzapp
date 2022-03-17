@@ -283,7 +283,7 @@ const app = new Vue({
             }
         },
         // Funzione per mostrare il menu a tendina dei singoli messaggi
-        toggleInvertOpacity(index) {
+        toggleShowMenuMsg(index) {
             return this.arrContacts[this.activeIndex].messages[index].showMenu = !this.arrContacts[this.activeIndex].messages[index].showMenu;
         },
         // Funzione per eliminare un messaggio dalla chat
