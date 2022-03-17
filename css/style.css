@@ -377,3 +377,69 @@ cursor: default;
     background: #ececec;
     cursor: pointer;
 }
+
+
+
+
+@media screen and (max-width: 420px) {
+
+    body {
+        display: block;
+        height: 0;
+    }
+    
+
+    .main-container {
+        position: relative;
+        width: 100%;
+        min-width: auto;
+        height: 100vh;
+    }
+
+    .left-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-right: none;
+    }
+    
+    .right-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .chat {
+        padding: .3rem .5rem;
+        flex-grow: 1;
+        overflow-y: scroll;
+    }
+    
+    .chat-message {
+        max-width: 85%;
+        padding: 1rem 2rem 1rem 1rem;
+    }
+
+    .chat-message .menu-msg {
+        right: 0;
+    }
+
+    footer {
+        padding: .2rem;
+    }
+
+    footer .send-audio,
+    footer .send-msg,
+    footer .emoji-invoker {
+    padding: 0 .2rem;
+    font-size: 1rem;
+    }
+
+    .emoji-picker {
+        position: absolute;
+        bottom: 3rem;
+        left: 0;
+        width: 100vw;
+        height: 60vh;
+    }
+}

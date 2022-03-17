@@ -197,7 +197,7 @@ const app = new Vue({
                 ]
             }
         ],
-        searchEmoji: '',
+        searchEmoji: ''
     },
     methods: {
         // Funzione per mandare un nuovo messaggio all'interno della chat e ricevere automaticamente una risposta dopo un secondo
