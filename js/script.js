@@ -222,7 +222,21 @@ const app = new Vue({
                     type: 'received',
                     showMenu: false
                 };
-                setTimeout(function () {activeContactChat.push(contactReply)}, 1000);
+                // Visualizzazione "user sta digitando..."
+                let userStatus = document.querySelector('.last-online');
+                let contactIsTyping = setInterval(userStatus.innerHTML = `${this.arrContacts[this.activeIndex].name} sta digitando...`, 1000);
+                // Risposta arrivata dopo un secondo e status user = online
+                setTimeout(function () {
+                    userStatus.innerHTML = `Online`;
+                    activeContactChat.push(contactReply);
+                }, 1000);
+                clearInterval(contactIsTyping);
+                // aggiornamento ora ultimo accesso del contatto, visibile dopo 3 secondi dallo status = online
+                this.arrContacts[this.activeIndex].lastOnline = luxon.DateTime.now();
+                let onlineUpdate = this.showLastOnlineDate();
+                setTimeout(function () {
+                    userStatus.innerHTML = onlineUpdate;
+                }, 3000);
             }
         },
         // Funzione per mostrare l'orario dell'ultimo accesso
