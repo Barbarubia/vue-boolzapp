@@ -50,10 +50,10 @@
             <!-- Searchbar -->
             <div class="searchbar-container">
                 <div class="searchbar">
-                    <label for="search">
+                    <label for="search-contact">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </label>
-                    <input @keyup="filterContacts()" v-model="searchContact" type="text" name="seach" id="search" placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup="filterContacts()" v-model="searchContact" type="text" name="seach" id="search-contact" placeholder="Cerca o inizia una nuova chat">
                 </div>
             </div>
             <!-- Contacts -->
@@ -107,7 +107,28 @@
             <!-- Footer -->
             <footer>
                 <div class="emoji">
-                    <i class="fa-regular fa-face-smile"></i>
+                    
+                    <emoji-picker @emoji="insert" :search="searchEmoji">
+                        <div slot="emoji-invoker" slot-scope="{ events: { click: clickEvent } }" @click.stop="clickEvent">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div slot="emoji-picker" slot-scope="{ emojis, insert, display }">
+                            <div>
+                                <div>
+                                    <input type="text" v-model="searchEmoji">
+                                </div>
+                                <div>
+                                    <div v-for="(emojiGroup, category) in emojis" :key="category">
+                                        <h5>{{ category }}</h5>
+                                        <div>
+                                            <span v-for="(emoji, emojiName) in emojiGroup" :key="emojiName" @click="insert(emoji)" :title="emojiName">{{ emoji }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </emoji-picker>
+                    
                 </div>
                 <input @keyup.enter="sendMsg" v-model="newMsg.text" type="text" name="newMsg" id="newMsg" placeholder="Scrivi un messaggio">
                 <div v-if="newMsg.text == ''" class="send-audio">
@@ -125,10 +146,12 @@
 
 
 
-    <!-- Link Luxon: libreria per gestire le date -->
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
     <!-- Link Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- Link Vue Emoji Picker -->
+    <script src="https://unpkg.com/vue-emoji-picker/dist/vue-emoji-picker.js"></script>
+    <!-- Link Luxon: libreria per gestire le date -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
     <!-- Link JS -->
     <script src="js/script.js"></script>
 </body>

@@ -1,3 +1,5 @@
+Vue.use(EmojiPicker);
+
 const app = new Vue({
     el: '#root',
     data: {
@@ -193,7 +195,8 @@ const app = new Vue({
                     }
                 ]
             }
-        ]
+        ],
+        searchEmoji: '',
     },
     methods: {
         // Funzione per mandare un nuovo messaggio all'interno della chat e ricevere automaticamente una risposta dopo un secondo
@@ -306,12 +309,19 @@ const app = new Vue({
         deleteMsg(index) {
             this.arrContacts[this.activeIndex].messages.splice(index, 1);
         },
+        // Funzione che ritorna l'orario di ciascun messaggio partendo dalla data in formato ISO
         timeMsg(index) {
             return luxon.DateTime.fromISO(this.arrContacts[this.activeIndex].messages[index].date).toFormat('HH:mm');
         },
+        // Funzione che permette lo scroll automatico della finestra della chat quando si inseriscono nuovi messaggi
+        // Credits: https://stackoverflow.com/questions/51852708/vuejs-how-to-scroll-bottom-when-data-changes
         autoscroll() {
             document.querySelector('.chat').scrollTop = document.querySelector('.chat').scrollHeight;
-          }
+        },
+        // Funzione per inserire e inviare emoji grazie allo script Emoji Picker 
+        insert(emoji) {
+            this.newMsg.text += emoji;
+        }
     },
     updated() {
         this.autoscroll();
