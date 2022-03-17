@@ -1,3 +1,4 @@
+// Istanza per caricare il plug-in Emoji Picker
 Vue.use(EmojiPicker);
 
 const app = new Vue({

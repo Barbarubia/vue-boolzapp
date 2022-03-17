@@ -106,31 +106,33 @@
             </main>
             <!-- Footer -->
             <footer>
-                <div class="emoji">
-                    
-                    <emoji-picker @emoji="insert" :search="searchEmoji">
-                        <div slot="emoji-invoker" slot-scope="{ events: { click: clickEvent } }" @click.stop="clickEvent">
-                            <i class="fa-regular fa-face-smile"></i>
-                        </div>
-                        <div slot="emoji-picker" slot-scope="{ emojis, insert, display }">
+                
+                <!-- Emoji Picker -->
+                <emoji-picker @emoji="insert" :search="searchEmoji">
+                    <div class="emoji-invoker" slot="emoji-invoker" slot-scope="{ events: { click: clickEvent } }" @click.stop="clickEvent">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+                    <div slot="emoji-picker" slot-scope="{ emojis, insert, display }">
+                        <div class="emoji-picker">
+                            <div class="emoji-picker__search">
+                                <input type="text" v-model="searchEmoji" placeholder="Cerca un'icona per nome">
+                            </div>
                             <div>
-                                <div>
-                                    <input type="text" v-model="searchEmoji">
-                                </div>
-                                <div>
-                                    <div v-for="(emojiGroup, category) in emojis" :key="category">
-                                        <h5>{{ category }}</h5>
-                                        <div>
-                                            <span v-for="(emoji, emojiName) in emojiGroup" :key="emojiName" @click="insert(emoji)" :title="emojiName">{{ emoji }}</span>
-                                        </div>
+                                <div v-for="(emojiGroup, category) in emojis" :key="category">
+                                    <h5>{{ category }}</h5>
+                                    <div class="emojis">
+                                        <span v-for="(emoji, emojiName) in emojiGroup" :key="emojiName" @click="insert(emoji)" :title="emojiName">{{ emoji }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </emoji-picker>
-                    
-                </div>
+                    </div>
+                </emoji-picker>
+
+                <!-- input per scrivere messaggi -->
                 <input @keyup.enter="sendMsg" v-model="newMsg.text" type="text" name="newMsg" id="newMsg" placeholder="Scrivi un messaggio">
+
+                <!-- icona per registrare audio (icona microfono) o, mentre si scrive un messaggio, permettere di inviare il messaggio in alternativa al tasto enter (icona aeroplano) -->
                 <div v-if="newMsg.text == ''" class="send-audio">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
