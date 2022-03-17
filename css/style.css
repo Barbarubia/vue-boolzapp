@@ -81,6 +81,38 @@ header .settings i {
     color: #6b7376;
 }
 
+.div-menu-chat {
+    position: relative;
+}
+
+.menu-chat {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    width: 15rem;
+    background-color: #fffeff;
+    border-radius: .3rem;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.75);
+    list-style: none;
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    color: #6b7376;
+}
+
+.menu-chat.show {
+    display: block;
+}
+
+.menu-chat li {
+    margin: .2rem;
+    cursor: pointer;
+}
+
+.menu-chat li:hover {
+    color: black;
+}
+
 /* SEZIONE SINISTRA */
 
 /* NOTIFICHE */

@@ -42,7 +42,8 @@ const app = new Vue({
                         type: 'received',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             },
             {
                 name: 'Fabio',
@@ -68,7 +69,8 @@ const app = new Vue({
                         type: 'sent',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             },
             {
                 name: 'Samuele',
@@ -100,7 +102,8 @@ const app = new Vue({
                         type: 'received',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             },
             {
                 name: 'Alessandro B.',
@@ -120,7 +123,8 @@ const app = new Vue({
                         type: 'received',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             },
             {
                 name: 'Alessandro L.',
@@ -146,7 +150,8 @@ const app = new Vue({
                         type: 'sent',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             },
             {
                 name: 'Claudia',
@@ -166,7 +171,8 @@ const app = new Vue({
                         type: 'sent',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             },
             {
                 name: 'Federico',
@@ -180,7 +186,8 @@ const app = new Vue({
                         type: 'received',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             },
             {
                 name: 'Davide',
@@ -194,7 +201,8 @@ const app = new Vue({
                         type: 'received',
                         showMenu: false
                     }
-                ]
+                ],
+                showMenuChat: false
             }
         ],
         searchEmoji: ''
@@ -309,6 +317,18 @@ const app = new Vue({
         // Funzione per eliminare un messaggio dalla chat
         deleteMsg(index) {
             this.arrContacts[this.activeIndex].messages.splice(index, 1);
+        },
+        // Funzione per mostrare il menu a tendina della chat cliccando sui 3 puntini in alto a destra
+        toggleShowMenuChat() {
+            return this.arrContacts[this.activeIndex].showMenuChat = !this.arrContacts[this.activeIndex].showMenuChat;
+        },
+        // Funzione per svuotare la chat da tutti i messaggi contenuti
+        clearChat() {
+            this.arrContacts[this.activeIndex].messages = [];
+        },
+        // Funzione per rimuovere la chat e anche il contatto (non sarà più visualizzabile nella lista contatti)
+        removeChat() {
+            this.arrContacts.splice(this.activeIndex, 1);
         },
         // Funzione che ritorna l'orario di ciascun messaggio partendo dalla data in formato ISO
         timeMsg(index) {

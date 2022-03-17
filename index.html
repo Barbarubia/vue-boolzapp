@@ -89,7 +89,13 @@
                 <div class="settings">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-paperclip"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="div-menu-chat">
+                        <i @click="toggleShowMenuChat()" class="fa-solid fa-ellipsis-vertical"></i>
+                        <ul class="menu-chat" :class="arrContacts[activeIndex].showMenuChat == true ? 'show' : ''">
+                            <li @click="clearChat()">Svuota la chat</li>
+                            <li @click="removeChat()">Rimuovi la chat</li>
+                        </ul>
+                    </div>
                 </div>
             </header>
             <!-- Chat -->
