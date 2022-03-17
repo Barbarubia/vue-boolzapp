@@ -200,6 +200,10 @@ header .settings i {
     overflow-y: scroll;
 }
 
+.chat .back-to-list { /* Serve nella versione mobile per tornare alla lista contatti */
+    display: none;
+}
+
 .chat-message {
     position: relative;
     min-width: 35%;
@@ -401,19 +405,45 @@ cursor: default;
         width: 100%;
         height: 100%;
         border-right: none;
-        z-index: 1;
     }
     
     .right-container {
+        display: none;
         position: absolute;
         width: 100%;
         height: 100%;
     }
 
+    .show-chat {
+        display: flex;
+    }
+
     .chat {
+        position: relative;
         padding: .3rem .5rem;
-        flex-grow: 1;
-        overflow-y: scroll;
+    }
+
+    .chat .back-to-list {
+        opacity: .3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 9;
+        top: 2rem;
+        left: 1rem;
+        width: 5rem;
+        height: 5rem;
+        background-color: #f3eeea;
+        box-shadow: 1px 1px 1px black;
+        border-radius: 50%;
+        font-size: 3rem;
+        color: #6b7376;
+    }
+
+    .chat .back-to-list:hover {
+        opacity: 1;
+        cursor: pointer;
     }
     
     .chat-message {

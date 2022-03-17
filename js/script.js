@@ -322,6 +322,11 @@ const app = new Vue({
         // Funzione per inserire e inviare emoji grazie allo script Emoji Picker 
         insert(emoji) {
             this.newMsg.text += emoji;
+        },
+        // Funzioni per versione mobile
+        toggleChat() {
+            let chatWindow = document.querySelector('.right-container');
+            return chatWindow.classList.toggle('show-chat');
         }
     },
     updated() {
