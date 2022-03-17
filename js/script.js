@@ -347,6 +347,37 @@ const app = new Vue({
         toggleChat() {
             let chatWindow = document.querySelector('.right-container');
             return chatWindow.classList.toggle('show-chat');
+        },
+        addNewContact() {
+            let newContact = {
+                name: '',
+                avatar: '7.jpg',
+                listed: true,
+                lastOnline: '2021-01-10T09:30:00',
+                messages: [
+                ],
+                showMenuChat: false
+            };
+
+            let newContactName = prompt('Digita il nome del contatto');
+
+            if (newContactName.trim() != '') {
+                newContact.name = newContactName;
+                let newContactAvatar = prompt("Digita M per l'avatar maschile o F per l'avatar femminile");
+                if (newContactAvatar.toLowerCase() == "m") {
+                    newContact.avatar = 'male.jpg';
+                    this.arrContacts.push(newContact);
+                    this.activeIndex = this.arrContacts.length - 1; 
+                } else if (newContactAvatar.toLowerCase() == "f") {
+                    newContact.avatar = 'female.jpg';
+                    this.arrContacts.push(newContact);
+                    this.activeIndex = this.arrContacts.length - 1; 
+                } else {
+                    alert("L'avatar selezionato non è valido");
+                }
+            } else {
+                alert('Il nome digitato non è valido');
+            };
         }
     },
     updated() {

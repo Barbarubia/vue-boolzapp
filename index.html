@@ -58,6 +58,7 @@
             </div>
             <!-- Contacts -->
             <ul class="contacts">
+                <button @click="addNewContact" class="add-contact"><i class="fa-solid fa-square-plus"></i> Aggiungi nuovo contatto</button>
                 <li v-if="contact.listed" v-for="(contact, index) in arrContacts" @click="activeIndex = index; toggleChat()" class="contact" :class="index == activeIndex ? 'active' : ''">
                     <div class="contact-img">
                         <img :src="'img/avatar_' + contact.avatar" :alt="'Immagine ' + contact.name">

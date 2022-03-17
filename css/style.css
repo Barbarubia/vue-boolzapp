@@ -184,7 +184,8 @@ header .settings i {
     list-style: none;
 }
 
-.contact {
+.contact,
+.add-contact {
     display: flex;
     padding: .5rem .5rem .5rem 1rem;
     cursor: pointer;
@@ -219,6 +220,19 @@ header .settings i {
 .contact-last-online {
     font-size: .9rem;
     color: #b1b1b1;
+}
+
+.add-contact {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #6b7376;
+    align-items: center;
+}
+
+.add-contact i {
+    font-size: 50px;
+    margin: 0 .5rem;
 }
 
 /* SEZIONE DESTRA */
