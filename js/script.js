@@ -222,6 +222,7 @@ const app = new Vue({
                     type: 'received',
                     showMenu: false
                 };
+                this.autoscroll();
                 // Visualizzazione "user sta digitando..."
                 let userStatus = document.querySelector('.last-online');
                 let contactIsTyping = setInterval(userStatus.innerHTML = `${this.arrContacts[this.activeIndex].name} sta digitando...`, 1000);
@@ -229,6 +230,7 @@ const app = new Vue({
                 setTimeout(function () {
                     userStatus.innerHTML = `Online`;
                     activeContactChat.push(contactReply);
+                    app.autoscroll();
                 }, 1000);
                 clearInterval(contactIsTyping);
                 // aggiornamento ora ultimo accesso del contatto, visibile dopo 3 secondi dallo status = online
@@ -306,6 +308,12 @@ const app = new Vue({
         },
         timeMsg(index) {
             return luxon.DateTime.fromISO(this.arrContacts[this.activeIndex].messages[index].date).toFormat('HH:mm');
-        }
+        },
+        autoscroll() {
+            document.querySelector('.chat').scrollTop = document.querySelector('.chat').scrollHeight;
+          }
+    },
+    updated() {
+        this.autoscroll();
     }
 })
