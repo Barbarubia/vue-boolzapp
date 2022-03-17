@@ -455,10 +455,6 @@ cursor: default;
         right: 0;
     }
 
-    footer {
-        padding: .2rem;
-    }
-
     footer .send-audio,
     footer .send-msg,
     footer .emoji-invoker {
@@ -468,7 +464,6 @@ cursor: default;
 
     .emoji-picker {
         position: absolute;
-        bottom: 3rem;
         left: 0;
         width: 100vw;
         height: 60vh;
