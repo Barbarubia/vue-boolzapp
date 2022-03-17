@@ -279,14 +279,16 @@ footer {
 }
 
 footer .emoji,
-footer .send-audio {
+footer .send-audio,
+footer .send-msg {
     padding: 0 2rem;
     font-size: 1.6rem;
     color: #6b7376;
 }
 
 footer .emoji i,
-footer .send-audio i {
+footer .send-audio i,
+footer .send-msg i {
     cursor: pointer;
 }
 

@@ -110,8 +110,11 @@
                     <i class="fa-regular fa-face-smile"></i>
                 </div>
                 <input @keyup.enter="sendMsg" v-model="newMsg.text" type="text" name="newMsg" id="newMsg" placeholder="Scrivi un messaggio">
-                <div class="send-audio">
+                <div v-if="newMsg.text == ''" class="send-audio">
                     <i class="fa-solid fa-microphone"></i>
+                </div>
+                <div v-else class="send-msg">
+                    <i @click="sendMsg" class="fa-solid fa-paper-plane"></i>
                 </div>
             </footer>
         </div>
