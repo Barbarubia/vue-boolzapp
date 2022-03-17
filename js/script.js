@@ -328,7 +328,15 @@ const app = new Vue({
         },
         // Funzione per rimuovere la chat e anche il contatto (non sarà più visualizzabile nella lista contatti)
         removeChat() {
-            this.arrContacts.splice(this.activeIndex, 1);
+            if (this.arrContacts.length == 1) {
+                // FIXME:
+                alert("Se c'è un solo contatto, la sua eliminazione genera un bug da fixare!");
+            } else if (this.activeIndex == this.arrContacts.length - 1) {
+                this.arrContacts.splice(-1);
+                this.activeIndex--;
+            } else { 
+                this.arrContacts.splice(this.activeIndex, 1);
+            }
         },
         // Funzione che ritorna l'orario di ciascun messaggio partendo dalla data in formato ISO
         timeMsg(index) {
