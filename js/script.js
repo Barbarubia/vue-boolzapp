@@ -392,3 +392,14 @@ const app = new Vue({
         this.autoscroll();
     }
 })
+
+
+// JAVASCRIPT PURO PER CAMBIO GRANDEZZA FONT
+let buttonFontSize = document.querySelector('.btn-font-size');
+
+buttonFontSize.addEventListener('click', function () {
+    
+    let window = document.querySelector('.main-container');
+    window.classList.toggle('font-big');
+
+})
