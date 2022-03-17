@@ -158,6 +158,10 @@ header .settings i {
     cursor: pointer;
 }
 
+.contact:hover {
+    background-color: #f6f6f6;
+}
+
 .contact.active {
     background-color: #e9ebeb;
 }
@@ -223,30 +227,38 @@ header .settings i {
 }
 
 .chat-message button {
+    display: none;
     position: absolute;
-    top: .3rem;
+    top: .2rem;
     right: .7rem;
     background: none;
     border: none;
+    font-size: 1.2rem;
     color: #b1b1b1;
     cursor: pointer;
 }
 
+.chat-message:hover button {
+    display: block;
+}
+
 .chat-message .menu-msg {
-    opacity: 0;
+    display: none;
     position: absolute;
     top: 1.2rem;
     right: -.7rem;
-    background-color: #eaeaea;
+    background-color: #fffeff;
     border-radius: .3rem;
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.75);
     list-style: none;
     padding: 0.3rem 1rem;
+    font-size: .8rem;
     color: #6b7376;
 }
 
-.menu-msg.show {
-    opacity: 1;
+.menu-msg.show,
+button.show {
+    display: block;
 }
 
 .chat-message .menu-msg li {

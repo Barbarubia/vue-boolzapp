@@ -97,7 +97,7 @@
                 <div v-for="(msg, index) in arrContacts[activeIndex].messages" class="chat-message" :class="msg.type == 'sent' ? 'sent-message' : 'received-message'">
                     <p>{{ msg.text }}</p>
                     <span class="time-msg">{{ timeMsg(index) }}</span>
-                    <button @click="toggleInvertOpacity(index)"><i class="fa-solid fa-angle-down"></i></button>
+                    <button @click="toggleInvertOpacity(index)" :class="msg.showMenu == true ? 'show' : ''"><i class="fa-solid fa-angle-down"></i></button>
                     <ul class="menu-msg" :class="msg.showMenu == true ? 'show' : ''">
                         <li>Inoltra il messaggio</li>
                         <li @click="deleteMsg(index)">Elimina il messaggio</li>
