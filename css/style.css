@@ -585,4 +585,8 @@ cursor: default;
     .btn-font-size {
         display: none;
     }
+
+    .splash-page h1 {
+        font-size: 20px;
+    }
 }
