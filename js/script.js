@@ -312,7 +312,15 @@ const app = new Vue({
         },
         // Funzione per mostrare il menu a tendina dei singoli messaggi
         toggleShowMenuMsg(index) {
-            return this.arrContacts[this.activeIndex].messages[index].showMenu = !this.arrContacts[this.activeIndex].messages[index].showMenu;
+            // this.arrContacts.forEach(contact => {
+            //     contact.showMenuChat = false;
+            //     contact.messages.forEach(message => {
+            //         message.showMenu = false;
+            //     })
+            // });
+
+            this.arrContacts[this.activeIndex].messages[index].showMenu = !this.arrContacts[this.activeIndex].messages[index].showMenu;
+
         },
         // Funzione per eliminare un messaggio dalla chat
         deleteMsg(index) {
@@ -320,7 +328,14 @@ const app = new Vue({
         },
         // Funzione per mostrare il menu a tendina della chat cliccando sui 3 puntini in alto a destra
         toggleShowMenuChat() {
-            return this.arrContacts[this.activeIndex].showMenuChat = !this.arrContacts[this.activeIndex].showMenuChat;
+            this.arrContacts.forEach(contact => {
+                contact.showMenuChat = false;
+                contact.messages.forEach(message => {
+                    message.showMenu = false;
+                })
+            });
+
+            this.arrContacts[this.activeIndex].showMenuChat = !this.arrContacts[this.activeIndex].showMenuChat;
         },
         // Funzione per svuotare la chat da tutti i messaggi contenuti
         clearChat() {
@@ -361,7 +376,7 @@ const app = new Vue({
                 name: '',
                 avatar: '7.jpg',
                 listed: true,
-                lastOnline: '2021-01-10T09:30:00',
+                lastOnline: '2022-01-10T09:30:00', // Data di inizio della classe 56 di Boolean :)
                 messages: [
                 ],
                 showMenuChat: false
